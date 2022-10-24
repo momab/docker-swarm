@@ -33,7 +33,7 @@ services:
       - redis
 
   web:
-    build: ./web
+    image: nginx
     restart: always
     ports:
       - 8080:80
