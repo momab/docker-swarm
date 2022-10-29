@@ -23,8 +23,8 @@ services:
     restart: always
     volumes:
       - nextcloud:/var/www/html
-    #  - nextcloud-config:/var/www/html/config
-    #  - nextcloud-data:/var/www/html/data
+      - nextcloud-config:/var/www/html/config
+      - nextcloud-data:/var/www/html/data
     environment:
       - MYSQL_HOST=db
       - REDIS_HOST=redis
@@ -41,6 +41,8 @@ services:
       - 8080:80
     volumes:
       - nextcloud:/var/www/html:ro
+      - nextcloud-config:/var/www/html/config:ro
+      - nextcloud-data:/var/www/html/data:ro
     depends_on:
       - app
 
@@ -49,8 +51,8 @@ services:
     restart: always
     volumes:
       - nextcloud:/var/www/html
-    #  - nextcloud-config:/var/www/html/config
-    #  - nextcloud-data:/var/www/html/data
+      - nextcloud-config:/var/www/html/config
+      - nextcloud-data:/var/www/html/data
     entrypoint: /cron.sh
     depends_on:
       - db
@@ -59,5 +61,5 @@ services:
 volumes:
   db:
   nextcloud:
-  #nextcloud-data:
-  #nextcloud-config:
+  nextcloud-data:
+  nextcloud-config:
