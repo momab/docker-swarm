@@ -26,14 +26,14 @@ services:
     environment:
       - MYSQL_HOST=db
       - REDIS_HOST=redis
-      - TRUSTED_PROXIES=nextcloud_swarm_01_trusted_proxies
-      - OVERWRITEPROTOCOL=https
-      - OVERWRITECLIURL=nextcloud_swarm_01_overwritecliurl
-      - OVERWRITEHOST=nextcloud_swarm_01_secret_overwritehost
-    secrets: 
-      - nextcloud_swarm_01_trusted_proxies
-      - nextcloud_swarm_01_overwritecliurl
-      - nextcloud_swarm_01_secret_overwritehost
+    #  - TRUSTED_PROXIES=nextcloud_swarm_01_trusted_proxies
+    #  - OVERWRITEPROTOCOL=https
+    #  - OVERWRITECLIURL=nextcloud_swarm_01_overwritecliurl
+    #  - OVERWRITEHOST=nextcloud_swarm_01_secret_overwritehost
+    #secrets: 
+    #  - nextcloud_swarm_01_trusted_proxies
+    #  - nextcloud_swarm_01_overwritecliurl
+    #  - nextcloud_swarm_01_secret_overwritehost
     env_file:
       - db.env
     depends_on:
@@ -60,16 +60,16 @@ services:
       - db
       - redis
 
-secrets: 
-  nextcloud_swarm_01_trusted_proxies:
-    file: nextcloud_swarm_01_trusted_proxies.txt
-    external: true
-  nextcloud_swarm_01_overwritecliurl:
-    file: nextcloud_swarm_01_overwritecliurl
-    external: true
-  nextcloud_swarm_01_secret_overwritehost:
-    file: nextcloud_swarm_01_secret_overwritehost
-    external: true
+#secrets: 
+#  nextcloud_swarm_01_trusted_proxies:
+#    file: nextcloud_swarm_01_trusted_proxies.txt
+#    external: true
+#  nextcloud_swarm_01_overwritecliurl:
+#    file: nextcloud_swarm_01_overwritecliurl
+#    external: true
+#  nextcloud_swarm_01_secret_overwritehost:
+#    file: nextcloud_swarm_01_secret_overwritehost
+#    external: true
 
 volumes:
   db:
