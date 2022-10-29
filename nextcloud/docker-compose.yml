@@ -30,10 +30,6 @@ services:
       - OVERWRITEPROTOCOL=https
       - OVERWRITECLIURL=nextcloud_swarm_01_overwritecliurl
       - OVERWRITEHOST=nextcloud_swarm_01_secret_overwritehost
-    secrets: 
-      - nextcloud_swarm_01_trusted_proxies
-      - nextcloud_swarm_01_overwritecliurl
-      - nextcloud_swarm_01_secret_overwritehost
     env_file:
       - db.env
     depends_on:
@@ -59,6 +55,11 @@ services:
     depends_on:
       - db
       - redis
+
+secrets: 
+  - nextcloud_swarm_01_trusted_proxies
+  - nextcloud_swarm_01_overwritecliurl
+  - nextcloud_swarm_01_secret_overwritehost
 
 volumes:
   db:
