@@ -33,8 +33,7 @@ services:
       - redis
 
   web:
-    image: momab/private_01
-    # build: ./web
+    image: docker.io/momab/private_01
     restart: always
     ports:
       - 8080:80
