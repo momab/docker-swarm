@@ -62,8 +62,14 @@ services:
 
 secrets: 
   nextcloud_swarm_01_trusted_proxies:
+    file: nextcloud_swarm_01_trusted_proxies.txt
+    external: true
   nextcloud_swarm_01_overwritecliurl:
+    file: nextcloud_swarm_01_overwritecliurl
+    external: true
   nextcloud_swarm_01_secret_overwritehost:
+    file: nextcloud_swarm_01_secret_overwritehost
+    external: true
 
 volumes:
   db:
