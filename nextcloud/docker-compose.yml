@@ -33,7 +33,7 @@ services:
       - redis
 
   web:
-    image: nginx-portainer:1.0
+    image: momab/private_01
     # build: ./web
     restart: always
     ports:
