@@ -26,6 +26,14 @@ services:
     environment:
       - MYSQL_HOST=db
       - REDIS_HOST=redis
+      - TRUSTED_PROXIES=nextcloud_swarm_01_trusted_proxies
+      - OVERWRITEPROTOCOL=https
+      - OVERWRITECLIURL=nextcloud_swarm_01_overwritecliurl
+      - OVERWRITEHOST=nextcloud_swarm_01_secret_overwritehost
+    secrets: 
+      - nextcloud_swarm_01_trusted_proxies
+      - nextcloud_swarm_01_overwritecliurl
+      - nextcloud_swarm_01_secret_overwritehost
     env_file:
       - db.env
     depends_on:
