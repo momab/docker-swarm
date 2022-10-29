@@ -41,8 +41,6 @@ services:
       - 8080:80
     volumes:
       - nextcloud:/var/www/html:ro
-      - nextcloud-config:/var/www/html/config:ro
-      - nextcloud-data:/var/www/html/data:ro
     depends_on:
       - app
 
@@ -51,8 +49,6 @@ services:
     restart: always
     volumes:
       - nextcloud:/var/www/html
-      - nextcloud-config:/var/www/html/config
-      - nextcloud-data:/var/www/html/data
     entrypoint: /cron.sh
     depends_on:
       - db
