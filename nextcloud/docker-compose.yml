@@ -61,10 +61,10 @@ services:
       - redis
 
 secrets: 
-  - nextcloud_swarm_01_trusted_proxies
-  - nextcloud_swarm_01_overwritecliurl
-  - nextcloud_swarm_01_secret_overwritehost
-  
+  nextcloud_swarm_01_trusted_proxies:
+  nextcloud_swarm_01_overwritecliurl:
+  nextcloud_swarm_01_secret_overwritehost:
+
 volumes:
   db:
   nextcloud:
